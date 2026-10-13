@@ -1,0 +1,42 @@
+# Secrets and local environment configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+secrets/
+credentials/
+
+# Database dumps and generated backups
+backups/
+*.sql
+*.sql.gz
+*.dump
+*.bak
+
+# Logs
+logs/
+*.log
+
+# macOS metadata
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Editors and IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Python artifacts (if Python is added later)
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Temporary files
+*.tmp
+*.temp

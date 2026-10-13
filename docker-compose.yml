@@ -1,0 +1,28 @@
+services:
+  mysql-production:
+    image: mysql:8.0
+    container_name: mysql-production
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: "RootDemo_A_2026!"
+      MYSQL_DATABASE: demo_comany
+    ports:
+      - "127.0.0.1:3306:3306"
+    volumes:
+      - mysql_production_data:/var/lib/mysql
+
+  mysql-backup:
+    image: mysql:8.0
+    container_name: mysql-backup
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: "RootDemo_B_2026!"
+      MYSQL_DATABASE: demo_company
+    ports:
+      - "127.0.0.1:3307:3306"
+    volumes:
+      - mysql-backup_data:/var/lib/mysql
+
+volumes:
+  mysql_production_data:
+  mysql-backup_data:
